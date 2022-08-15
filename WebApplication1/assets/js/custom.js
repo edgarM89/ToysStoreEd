@@ -9,6 +9,9 @@
     var age = $(this).parent().parent().find(".age").text().trim();
     var price = $(this).parent().parent().find(".price").text().trim();
     var company = $(this).parent().parent().find(".company").text().trim();
+    var imge = $(this).parent().parent().find("img").attr("src");
+
+    $(".imgtoye").attr("src", imge);
 
     $(".nameedit").val(name);
     $(".descedit").val(desc);
@@ -107,7 +110,8 @@ $("#saveupdateToy").click(function (e) {
     $.ajax({
 
         type: "POST",
-        url: "Home/updateToy",
+        //url: "Home/updateToy",
+        url: "updateToy",
         data: formData,
         cache: false,
         contentType: false,
@@ -180,7 +184,8 @@ $("#saveToy").click(function () {
     $.ajax({
 
         type: "POST",
-        url: "Home/AddToy",
+        //url: "Home/AddToy",
+        url: "AddToy",
         data: formData,
         cache: false,
         contentType: false,
@@ -226,7 +231,8 @@ $("#deletetoyyes").click(function () {
     $.ajax({
 
         type: "POST",
-        url: "Home/deletetoy",
+        //url: "Home/deletetoy",
+        url: "deletetoy",
         data: formData,
         cache: false,
         contentType: false,
