@@ -9,4 +9,6 @@ Decidí resolver el problema de la manera que se me hizo mas cómodo y fácil, p
 Todo esto lo integré en un mismo proyecto la api la deje fuera la hice pero la consumí, por temas de tiempo. 
 Creo no debe de existir ningún problema para correr la app.
 
+Por ultimo me gustaría platicarles que en el equipo que me encuentro actualmente es un equipo de innovación y manejamos diversas tecnologías desde web escritorio hasta Mobile con Android, igual si en la parte técnica quieren platicar conmigo quedo abierto a comentarios y que conozcan un poco mas de lo que puedo aportar.
+
 
