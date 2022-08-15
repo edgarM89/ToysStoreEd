@@ -1,0 +1,210 @@
+﻿.imgtoy
+{
+    width: 100%;
+}
+.bodycontent {
+    padding-top: 43px;
+}
+input#searchtoy {
+    border-radius: 26px;
+    padding: 4px 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#addtoybutton {
+    border-radius: 19px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 3px 10px;
+    display: block;
+    background: #2b8c99;
+    color: white;
+    float: right;
+    border-color: #949494;
+}
+
+.edit {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-width: 1px;
+    border-color: #ff9393;
+    border-style: solid;
+    color: #ff4b4b;
+    background: #ffd6d6;
+}
+
+.imgcontent {
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-style: solid;
+    float: left;
+}
+
+.titletoy {
+    float: left;
+    padding: 10px 10px 0 10px;
+}
+
+.inputContent {
+    position: relative;
+}
+    .inputContent label {
+        position: absolute;
+        left: 6px;
+        color: #459fb7;
+        bottom: 12px;
+    }
+    .inputContent input {
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        padding: 1px 0 1px 10px;
+        margin-bottom: 14px;
+        width: 100%;
+        display: inline-block;
+        height: 36px;
+        transition: all .3s;
+    }
+        .inputContent input:focus-visible {
+            outline: none ;
+        }
+
+
+.inputContent2 {
+    position: relative;
+}
+
+    .inputContent2 label {
+        position: absolute;
+        left: 6px;
+        color: #459fb7;
+        top: -16px;
+    }
+
+    .inputContent2 input {
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        padding: 1px 0 1px 10px;
+        margin-bottom: 14px;
+        width: 100%;
+        display: inline-block;
+        height: 36px;
+        transition: all .3s;
+    }
+
+        .inputContent2 input:focus-visible {
+            outline: none;
+        }
+
+
+        /**********/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    float: right;
+}
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        display: none;
+    }
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input.default:checked + .slider {
+    background-color: #444;
+}
+
+input.primary:checked + .slider {
+    background-color: #2196F3;
+}
+
+input.success:checked + .slider {
+    background-color: #8bc34a;
+}
+
+input.info:checked + .slider {
+    background-color: #3de0f5;
+}
+
+input.warning:checked + .slider {
+    background-color: #FFC107;
+}
+
+input.danger:checked + .slider {
+    background-color: #f44336;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+.deleteToy {
+    background: #ff2d2d;
+    border-width: 1px;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    color: white;
+    font-size: 12px;
+}
+
+span.nametoy {
+    font-weight: bold;
+}
+
+.inpempty {
+    background: #ef838366;
+}
+
+.dibl
+{
+    display: inline-block;
+}

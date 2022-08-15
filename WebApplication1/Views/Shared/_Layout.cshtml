@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toys Store</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/assets/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="edittoy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Edit Toy</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="contentForm col-md-6">
+                        @*<div>
+                                <p>Disable</p>
+                                <label class="switch ">
+                                    <input type="checkbox" class="danger">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>*@
+                        <div class="inputContent2">
+                            <label>Name</label>
+                            <input class="nameedit inpaddup" type="text" value="" />
+                        </div>
+                        <div class="inputContent2">
+                            <label>Description</label>
+                            <input class="descedit inpaddup" type="text" value="" />
+                        </div>
+                        <div class="inputContent2">
+                            <label>Age</label>
+                            <input class="ageedit inpaddup"  type="number" min="0" max="100" value="" />
+                        </div>
+                        <div class="inputContent2">
+                            <label>Price</label>
+                            <input class="priceedit inpaddup" type="number" min="1" max="1000" value="" />
+                        </div>
+                        <div class="inputContent2">
+                            <label>Company</label>
+                            <input class="companytedit inpaddup" type="text" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="imgtoy" src="~/assets/images/dartvader2.jpg" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveupdateToy" class="btn btn-primary" data-idToy="">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addtoy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Toy</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="contentForm col-md-6">
+                        @*<div>
+                                <p>Disable</p>
+                                <label class="switch ">
+                                    <input type="checkbox" class="danger">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>*@
+                        <div class="inputContent">
+                            <label>Name</label>
+                            <input class="namet inpadd" type="text" value="" />
+                        </div>
+                        <div class="inputContent">
+                            <label>Description</label>
+                            <input class="desct inpadd" type="text" value="" />
+                        </div>
+                        <div class="inputContent">
+                            <label>Age</label>
+                            <input class="aget inpadd" max="100" min="0" type="number" value="" />
+                        </div>
+                        <div class="inputContent">
+                            <label>Price</label>
+                            <input class="pricet inpadd" min="1" max="1000" type="number" value="" />
+                        </div>
+                        <div class="inputContent">
+                            <label>Company</label>
+                            <input class="companyt inpadd" type="text" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <input id="imgtoy" type="file" name="name" value="" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveToy">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="deletetoy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Alert!</h4>
+                </div>
+                <div class="modal-body">
+                    Are yoy sure delete <span class="nametoy"></span>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="deletetoyyes">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Edgar Montaño Dev</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/assets/js/custom.js"></script>
+</body>
+</html>

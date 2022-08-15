@@ -1,0 +1,51 @@
+﻿@{ 
+    var imgp = "";
+}
+
+<div class="bodycontent">
+    <div class="filterContent">
+        <input type="text" id="searchtoy" value="" placeholder="Type to search" />
+        <button id="addtoybutton"><i class="glyphicon glyphicon-plus"></i> Add toy</button>
+    </div>
+
+    <table class="table table-striped" id="listToys">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Age</th>
+                <th>Price</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 0; i < ViewBag.datatoys.Rows.Count; i++)
+            {
+                {
+                    imgp = ViewBag.pathimg + ViewBag.datatoys.Rows[i]["img"];
+                }
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <div class="imgcontent">
+                            <img class="imgtoy" src="data:image/png;base64,@ViewBag.datatoys.Rows[i]["img"]" />
+                        </div>
+                        <label class="titletoy">@ViewBag.datatoys.Rows[i]["name"]</label>
+                    </td>
+                    <td class="desc">@ViewBag.datatoys.Rows[i]["description"]</td>
+                    <td class="age">@ViewBag.datatoys.Rows[i]["age"]</td>
+                    <td><p class="price dibl">@ViewBag.datatoys.Rows[i]["price"]</p><p class="dibl">$</p></td>
+                    <td class="company">@ViewBag.datatoys.Rows[i]["idcompany"]</td>
+                    <td>
+                        <button data-idtoy="@ViewBag.datatoys.Rows[i]["id"]" class="edit"><span class="glyphicon glyphicon-pencil"></span></button> 
+                        <button data-idtoy="@ViewBag.datatoys.Rows[i]["id"]" class="deleteToy"><i class="glyphicon glyphicon-remove"></i></button>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
